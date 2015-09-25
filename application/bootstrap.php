@@ -93,7 +93,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  * The following options are available:
  *
  * - string   base_url    path, and optionally domain, of your application   NULL
- * - string   index_file  name of your index file, usually "index.php"       index.php
+ * - string   index_file  name of your index file, usually "Index.php"       Index.php
  * - string   charset     internal character set used for input and output   utf-8
  * - string   cache_dir   set the internal cache directory                   APPPATH/cache
  * - integer  cache_life  lifetime, in seconds, of items cached              60
@@ -103,7 +103,8 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - boolean  expose      set the X-Powered-By header                        FALSE
  */
 Kohana::init(array(
-	'base_url'   => '/kohana/',
+	'base_url'     => '/kohana/',
+	'index_file'   => false ,
 ));
 
 /**
