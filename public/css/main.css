@@ -191,3 +191,43 @@ footer{
 #footer_developed .red{
     color:#c70000;
 }
+/* Форма подачи заявки на расчет услуг компании -----------------------------------------------*/
+.custom_form_wrapper{
+    width: 1140px;
+    height: 444px;
+    border: 2px solid #fff;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background-color: #0652ff;
+    color: #fff;
+}
+.form_column{
+    width:570px;
+    height: 100%;
+}
+.label_form_column{
+    width: 570px;
+    height: 75px;
+    padding-left: 50px;
+    float: left;
+    text-align: center;
+    line-height: 75px;
+    color: #fff;
+    background-color: #0435a6;
+}
+.form_row{
+    width:495px;
+    height: 34px;
+    padding-left: 50px;
+    line-height: 34px;
+    text-align: left;
+    float: left;
+}
+.form_row input{
+    width: 100%;
+    line-height: 100%;
+    background-color: #fff;
+    color:#000000;
+    text-align: left;
+}

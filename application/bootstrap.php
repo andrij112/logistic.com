@@ -103,7 +103,8 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - boolean  expose      set the X-Powered-By header                        FALSE
  */
 Kohana::init(array(
-	'base_url'     => '/kohana/',
+//	'base_url'     => '/kohana/',
+	'base_url'     => '/',
 	'index_file'   => false ,
 ));
 
@@ -145,8 +146,17 @@ Kohana::modules(array(
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
+
+Route::set('custom', '(<controller>(/<action>(/<id>)))')
+	->defaults(array(
+		'controller' => 'index',
+		'action'     => 'custom',
+	));
+
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
 		'controller' => 'index',
 		'action'     => 'index',
 	));
+
+
