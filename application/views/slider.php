@@ -1,0 +1,1 @@
+    <img src="public/img/main.png" alt="main_image">
