@@ -1,9 +1,3 @@
-<?php
-    //$form
-//    $form = 1;
-
-?>
-
 <!DOCTYPE html>
 <!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
@@ -17,12 +11,7 @@
     <meta name="description"           content="Услуги в сфере логистики" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport"              content="width=device-width, initial-scale=1.0" />
-    <!--<link rel="shortcut icon"  href="favicon.png" />-->
     <link rel="stylesheet"     href="public/libs/bootstrap/bootstrap-grid-3.3.1.min.css" />
-    <!--<link rel="stylesheet" href="public/libs/font-awesome-4.2.0/css/font-awesome.min.css" />-->
-   <!-- <link rel="stylesheet"     href="public/libs/fancybox/jquery.fancybox.css" />-->
-    <!-- <link rel="stylesheet" href="public/libs/owl-carousel/owl.carousel.css" />
-     <link rel="stylesheet"     href="public/libs/countdown/jquery.countdown.css" />-->
     <link rel="stylesheet"     href="public/css/fonts.css" />
     <link rel="stylesheet"     href="public/css/reset.css" />
     <link rel="stylesheet"     href="public/css/main.css" />
@@ -39,33 +28,39 @@
             </div>
             <div id="main_menu">
                 <ul>
-                    <li id="menu_button_main"><span class="active_li">Главная</span></li>
-                    <li id="menu_button_custom"><span>Заказ</span></li>
-                    <li id="menu_button_services"><span>Услуги</span></li>
-                    <li id="menu_button_information"><span>Информация</span></li>
-                    <li id="menu_button_contacts"><span>Контакты</span></li>
-                    <li id="menu_button_careers"><span>Вакансии</span></li>
+                    <li id="menu_button_main"><span <?php
+                        echo ($page == 'main' || $page == '') ? 'class="active_li"': ''?>>Главная</span></li>
+                    <li id="menu_button_custom"><span <?php
+                        echo $page == 'custom' ? 'class="active_li"': ''?>>Заказ</span></li>
+                    <li id="menu_button_services"><span <?php
+                        echo $page == 'services' ? 'class="active_li"': ''?>>Услуги</span></li>
+                    <li id="menu_button_information"><span <?php
+                        echo $page == 'information' ? 'class="active_li"': ''?>>Информация</span></li>
+                    <li id="menu_button_contacts"><span <?php
+                        echo $page == 'contacts' ? 'class="active_li"': ''?>>Контакты</span></li>
+                    <li id="menu_button_careers"><span <?php
+                        echo $page == 'careers' ? 'class="active_li"': ''?>>Вакансии</span></li>
                 </ul>
             </div>
         </div>
     </header>
     <section>
         <div class="after_header">
-            <div id="custom_form_wrapper">
+            <div id="custom_form_wrapper" <?php
+                if ($page != 'custom')
+                    echo 'class="hide_element"';
+            ?>>
                 <form action="">
                     <div class="form_column">
                         <div class="label_form_column">
                             <p>Параметры доставки</p>
                         </div>
-                       <!-- <div class="form_row">
-                            <input type="text">
-                        </div>-->
                         <div class="label_input_form_row">
-                            <p>Адресс отправителя</p>
+                            <p>Адрес отправителя</p>
                         </div>
                         <textarea class="input_form_row input_form_row_for_address" rows="2"></textarea>
                         <div class="label_input_form_row">
-                            <p>Адресс доставки</p>
+                            <p>Адрес доставки</p>
                         </div>
                         <textarea class="input_form_row input_form_row_for_address" rows="2"></textarea>
                         <div class="label_input_form_row">
@@ -105,10 +100,13 @@
             <div class="content">
                 <div class="get_price">
                     <h2>Лучшее качество на рынке логистики</h2>
-                    <div class="get_price_button">
+                    <div class="get_price_button <?php
+                        echo $page == 'custom' ? 'get_price_button_inverted' : ''?>">
                         <h2>
-                            <span id="request_button_text">Расчет стоимости</span>
-                            <span id="request_button_text_inverted">Отправить запрос</span>
+                            <span id="request_button_text"  <?php
+                                echo $page == 'custom' ? 'class="hide_element"' : ''?>>Расчет стоимости</span>
+                            <span id="request_button_text_inverted" <?php
+                                echo $page == 'custom' ? '' : 'class="hide_element"'?>>Отправить запрос</span>
                         </h2>
                     </div>
                 </div>
@@ -132,15 +130,6 @@
 <script src="public/libs/respond/respond.min.js"></script>
 <![endif]-->
 <script src="public/libs/jquery/jquery-1.11.1.min.js"></script>
-<!--<script src="public/libs/jquery-mousewheel/jquery.mousewheel.min.js"></script>
-<script src="public/libs/fancybox/jquery.fancybox.pack.js"></script>
-<script src="public/libs/waypoints/waypoints-1.6.2.min.js"></script>
-<script src="public/libs/scrollto/jquery.scrollTo.min.js"></script>
-<script src="public/libs/owl-carousel/owl.carousel.min.js"></script>
-<script src="public/libs/countdown/jquery.plugin.js"></script>
-<script src="public/libs/countdown/jquery.countdown.min.js"></script>
-<script src="public/libs/countdown/jquery.countdown-ru.js"></script>
-<script src="public/libs/landing-nav/navigation.js"></script>-->
 <script src="public/js/common.js"></script>
 <script src="public/js/requests.js"></script>
 </body>

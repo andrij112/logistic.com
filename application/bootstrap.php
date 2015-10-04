@@ -145,8 +145,7 @@ Kohana::modules(array(
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
-
-Route::set('index',  'custom')
+Route::set('custom',  'custom')
 	->defaults(array(
 		'controller' => 'index',
 		'action'     => 'custom',
@@ -181,19 +180,47 @@ Route::set('careers',  'careers')
 		'controller' => 'index',
 		'action'     => 'careers',
 	));
+/**
+ * Роути для ajax запитів
+ */
+Route::set('get_custom',  'get_custom')
+	->defaults(array(
+		'controller' => 'index',
+		'action'     => 'get_custom',
+	));
 
+Route::set('get_main',  'get_main')
+	->defaults(array(
+		'controller' => 'index',
+		'action'     => 'get_main',
+	));
 
+Route::set('get_services',  'get_services')
+	->defaults(array(
+		'controller' => 'index',
+		'action'     => 'get_services',
+	));
+
+Route::set('get_information',  'get_information')
+	->defaults(array(
+		'controller' => 'index',
+		'action'     => 'get_information',
+	));
+
+Route::set('get_contacts',  'get_contacts')
+	->defaults(array(
+		'controller' => 'index',
+		'action'     => 'get_contacts',
+	));
+
+Route::set('get_careers',  'get_careers')
+	->defaults(array(
+		'controller' => 'index',
+		'action'     => 'get_careers',
+	));
 
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
 		'controller' => 'index',
 		'action'     => 'index',
 	));
-/*
-Route::set('default', '(<controller>(/<action>(/<id>)))')
-	->defaults(array(
-		'controller' => 'welcome',
-		'action'     => 'index',
-	));
-
-*/

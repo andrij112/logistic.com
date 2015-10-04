@@ -1,7 +1,10 @@
 function getArticle(article, callback) {
-    console.log(article);
+    if (article)
+        var url = '/get_' + article;
+    else
+        var url = '/get_main';
     $.ajax({
-        url: '/' + article,
+        url: url,
         dataType: 'json',
         cache: true,
         contentType: false,
