@@ -39,12 +39,12 @@
             </div>
             <div id="main_menu">
                 <ul>
-                    <li id="menu_button_main"><span class="active_li">Головна</span></li>
-                    <li id="menu_button_custom"><span>Замовлення</span></li>
-                    <li id="menu_button_services"><span>Послуги</span></li>
-                    <li id="menu_button_information"><span>Інформація</span></li>
-                    <li id="menu_button_contacts"><span>Контакти</span></li>
-                    <li id="menu_button_careers"><span>Вакансії</span></li>
+                    <li id="menu_button_main"><span class="active_li">Главная</span></li>
+                    <li id="menu_button_custom"><span>Заказ</span></li>
+                    <li id="menu_button_services"><span>Услуги</span></li>
+                    <li id="menu_button_information"><span>Информация</span></li>
+                    <li id="menu_button_contacts"><span>Контакты</span></li>
+                    <li id="menu_button_careers"><span>Вакансии</span></li>
                 </ul>
             </div>
         </div>
@@ -55,46 +55,45 @@
                 <form action="">
                     <div class="form_column">
                         <div class="label_form_column">
-                            <p>Параметри доставки</p>
+                            <p>Параметры доставки</p>
                         </div>
                        <!-- <div class="form_row">
                             <input type="text">
                         </div>-->
                         <div class="label_input_form_row">
-                            <p>Адреса відправлення</p>
+                            <p>Адресс отправителя</p>
                         </div>
                         <textarea class="input_form_row input_form_row_for_address" rows="2"></textarea>
                         <div class="label_input_form_row">
-                            <p>Адреса доставки</p>
+                            <p>Адресс доставки</p>
                         </div>
                         <textarea class="input_form_row input_form_row_for_address" rows="2"></textarea>
                         <div class="label_input_form_row">
-                            <p>Вид вантажу</p>
+                            <p>Вид груза</p>
                         </div>
                         <input class="input_form_row" type="text">
                         <div class="form_row">
                             <div class="form_column_smaller right_margin-30">
-                                <div   class="label_input_form_row_smaller">Вага вантажу</div>
+                                <div   class="label_input_form_row_smaller">Вес груза</div>
                                 <input class="input_form_row_smaller" type="text">
                             </div>
                             <div class="form_column_smaller">
-                                <div   class="label_input_form_row_smaller">Об’єм вантажу</div>
+                                <div   class="label_input_form_row_smaller">Обьем груза</div>
                                 <input class="input_form_row_smaller" type="text">
                             </div>
                         </div>
                     </div>
                     <div class="form_column">
                         <div   class="label_form_column">
-                            <p>Супроводжувальній лист</p>
+                            <p>Сопроводительное письмо</p>
                         </div>
                         <div   class="label_input_form_feedback_dark form_row top_margin-34 margin_bottom_5px"> Автор
                         </div>
                         <input class="input_form_feedback            form_row top_margin-34 margin_bottom_5px" type="text">
-                        <div   class="label_input_form_feedback_dark form_row"> E-mail/Telephone</div>
+                        <div   class="label_input_form_feedback_dark form_row"> E-mail/Телефон</div>
                         <input class="input_form_feedback            form_row" type="text">
                         <div   class="label_input_form_feedback      form_row feedback_text_label">Текст :</div>
-                        <textarea name="" id="feedback_text">
-                        </textarea>
+                        <textarea name="" id="feedback_text"></textarea>
                     </div>
                 </form>
             </div>
@@ -105,11 +104,11 @@
         <div class="wrapper_content">
             <div class="content">
                 <div class="get_price">
-                    <h2>Найвища якість на ринку логістики</h2>
+                    <h2>Лучшее качество на рынке логистики</h2>
                     <div class="get_price_button">
                         <h2>
-                            <span id="request_button_text">Розрахувати вартість</span>
-                            <span id="request_button_text_inverted">Надіслати запит</span>
+                            <span id="request_button_text">Расчет стоимости</span>
+                            <span id="request_button_text_inverted">Отправить запрос</span>
                         </h2>
                     </div>
                 </div>

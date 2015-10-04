@@ -18,37 +18,38 @@ class Controller_Index extends Controller_Template {
 
 	public function action_main()
 	{
-			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_main')));
-			die;
+		echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_main')));
+		die;
 	}
 
 	public function action_custom()
 	{
-			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_custom')));
-			die;
+		echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_custom')));
+		die;
 	}
 
 	public function action_services()
 	{
-			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_services')));
-			die;
+		echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_services')));
+		die;
 	}
 
 	public function action_information()
 	{
-			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_information')));
-			die;
+		echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory
+		('article_information')));
+		die;
 	}
 
 	public function action_contacts()
 	{
-			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_contacts')));
-			die;
+		echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_contacts')));
+		die;
 	}
 
 	public function action_careers()
 	{
-			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_careers')));
-			die;
+		echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_careers')));
+		die;
 	}
 } // End Index
