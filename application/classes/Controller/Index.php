@@ -2,43 +2,53 @@
 
 class Controller_Index extends Controller_Template {
 
-	public $template = 'header';
+	public $template = 'main_template';
 
-	public function before()
+/*	public function before()
 	{
 		parent::before();
 		$this->companyName = "Logistic Line LTD";
-	}
-
-	public function action_index()
-	{
-		$this->response->body(View::factory('header'));
-	}
-
-	public function action_custom()
-	{
-		echo $this->response->body(View::factory('main_template'), array(
-				'form' => '',
-			));
-		die;
-	}
-
-/*
-class Controller_Index extends Controller{
-
-	public function action_index()
-	{
-//		echo $this->request->response = View::factory('header');
-		echo Request::current()->action(); die;
-		echo View::factory('header');
-
-	}
-
-	public function action_custom()
-	{
-		echo URL::base();
-		echo URL::base('https', TRUE);
-//		echo View::factory('custom_form');
 	}*/
 
+	public function action_index()
+	{
+		$this->template->form = '';
+		$this->template->article = View::factory('article_main');
+	}
+
+	public function action_main()
+	{
+			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_main')));
+			die;
+	}
+
+	public function action_custom()
+	{
+			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_custom')));
+			die;
+	}
+
+	public function action_services()
+	{
+			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_services')));
+			die;
+	}
+
+	public function action_information()
+	{
+			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_information')));
+			die;
+	}
+
+	public function action_contacts()
+	{
+			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_contacts')));
+			die;
+	}
+
+	public function action_careers()
+	{
+			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_careers')));
+			die;
+	}
 } // End Index

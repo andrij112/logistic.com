@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'Conv_urw_gothic_l_book';
-	src: url('fonts/urw_gothic_l_book.eot');
+	src: url('../fonts/urw_gothic_l_book.eot');
 	src: local('☺'),
-		 url('fonts/urw_gothic_l_book.woff') format('woff'),
-		 url('fonts/urw_gothic_l_book.ttf') format('truetype'),
-		 url('fonts/urw_gothic_l_book.svg') format('svg');
+		 url('../fonts/urw_gothic_l_book.woff') format('woff'),
+		 url('../fonts/urw_gothic_l_book.ttf') format('truetype'),
+		 url('../fonts/urw_gothic_l_book.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
