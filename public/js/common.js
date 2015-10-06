@@ -1,7 +1,7 @@
 $(document).ready(function(){
     //console.log(window.location);
     /**
-     * Реакция на клик главного меню (навигации)
+     * Реакция на клик главного меню (навигации) ***********************************************
      */
     $('#main_menu').on("click", "li span", function(){
         var page = $(this).parent().attr("id").split('_')[2];
@@ -47,7 +47,7 @@ $(document).ready(function(){
         window.history.pushState(null, null, '/' + page);
     })
     /**
-     * Реакция на клик кнопки "Розрахувати вартість"
+     * Реакция на клик кнопки "Розрахувати вартість" ************************************************
      */
     $('#request_button_text').on('click', function(){
         $(this).hide();
@@ -65,7 +65,9 @@ $(document).ready(function(){
                 console.log('Error in request to custom article');
         })
     })
-
+    /**
+     * Функція для роботи кнопок браузера переходу "вперед" та "азад" ********************************
+     */
     $(window).bind('popstate', function() {
         var page = location.href.split('/').slice(1)[2];
         if (!page)
@@ -109,5 +111,77 @@ $(document).ready(function(){
             })
 
         }
+    });
+    /**
+     * Функція валідації форми відправки заявки на розрахунок послуг ********************************
+     */
+    $('body').on('click', '.get_price_button_inverted', function(){
+       var error = false;
+       if(!$('#address_out').val()) {
+           $('#address_out').attr('placeholder', 'Введите, пожалуйста, адрес отпраки груза');
+           $('#address_out').css('background', '#fdd');
+           error = true;
+       }
+       else{
+           $('#address_out').css('background', '#dfd');
+       }
+
+       if(!$('#address_in').val()){
+           $('#address_in').attr('placeholder', 'Введите, пожалуйста, адрес доставки груза');
+           $('#address_in').css('background', '#fdd');
+           error = true;
+       }
+       else{
+           $('#address_in').css('background', '#dfd');
+       }
+
+       if(!$('#cargo_type').val()){
+           $('#cargo_type').attr('placeholder', 'Введите, пожалуйста, тип груза');
+           $('#cargo_type').css('background', '#fdd');
+           error = true;
+        }
+       else{
+           $('#cargo_type').css('background', '#dfd');
+       }
+
+       if(!$('#cargo_weight').val()){
+           $('#cargo_weight').attr('placeholder', 'Вес груз не указан');
+           $('#cargo_weight').css('background', '#fdd');
+           error = true;
+       }
+       else{
+           $('#cargo_weight').css('background', '#dfd');
+       }
+
+       if(!$('#cargo_volume').val()){
+           $('#cargo_volume').attr('placeholder', 'Обьем груза не указан');
+           $('#cargo_volume').css('background', '#fdd');
+           error = true;
+       }
+       else{
+           $('#cargo_volume').css('background', '#dfd');
+       }
+
+       if(!$('#feedback_author').val()){
+           $('#feedback_author').attr('placeholder', 'Введите Ваше контактное Имя');
+           $('#feedback_author').css('background', '#fdd');
+           error = true;
+       }
+       else{
+           $('#feedback_author').css('background', '#dfd');
+       }
+
+       if(!$('#feedback_contacts').val()){
+           $('#feedback_contacts').attr('placeholder', 'Введите Ваши контактные данные ');
+           $('#feedback_contacts').css('background', '#fdd');
+           error = true;
+       }
+       else{
+           $('#feedback_contacts').css('background', '#dfd');
+       }
+       if(!error) {
+
+       }
+
     });
 });

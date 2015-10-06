@@ -216,18 +216,26 @@ footer{
     -moz-border-radius: 25px;
     border-radius: 25px;
     background-color: #0652ff;
+    /*background-color: #676767;*/
     color: #fff;
     overflow: hidden;
     margin : 0 auto;
+    position: relative;
     /*display:none;*/
+}
+#custom_form_wrapper form{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 .form_column{
     width:565px;
     height: 100%;
     float: left;
+    overflow: hidden;
+    position: relative;
 }
-
-.label_form_column{
+.label_form_column_right{
     width: 565px;
     height: 75px;
     padding-left: 50px;
@@ -236,8 +244,25 @@ footer{
     line-height: 75px;
     color: #fff;
     background-color: #0435a6;
+    /*background-color: #393939;*/
+    border-top-right-radius: 20px;
 }
-.label_form_column p{
+
+.label_form_column_left{
+    width: 565px;
+    height: 75px;
+    padding-left: 50px;
+    float: left;
+    text-align: center;
+    line-height: 75px;
+    color: #fff;
+    background-color: #0435a6;
+    /*background-color: #393939;*/
+    border-top-left-radius: 20px;
+}
+.label_form_column_right h2,
+.label_form_column_left h2{
+    font-size: 25px;
     border:  0;
     padding: 0;
 }

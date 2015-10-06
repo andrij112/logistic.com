@@ -52,42 +52,45 @@
             ?>>
                 <form action="">
                     <div class="form_column">
-                        <div class="label_form_column">
-                            <p>Параметры доставки</p>
+                        <div class="label_form_column_left">
+                            <h2>Параметры доставки</h2>
                         </div>
                         <div class="label_input_form_row">
                             <p>Адрес отправителя</p>
                         </div>
-                        <textarea class="input_form_row input_form_row_for_address" rows="2"></textarea>
+                        <textarea id = "address_out" class="input_form_row input_form_row_for_address"
+                                  rows="2" ></textarea>
                         <div class="label_input_form_row">
                             <p>Адрес доставки</p>
                         </div>
-                        <textarea class="input_form_row input_form_row_for_address" rows="2"></textarea>
+                        <textarea id = "address_in" class="input_form_row input_form_row_for_address"
+                                  rows="2"></textarea>
                         <div class="label_input_form_row">
                             <p>Вид груза</p>
                         </div>
-                        <input class="input_form_row" type="text">
+                        <input id = "cargo_type" class="input_form_row" type="text">
                         <div class="form_row">
                             <div class="form_column_smaller right_margin-30">
                                 <div   class="label_input_form_row_smaller">Вес груза</div>
-                                <input class="input_form_row_smaller" type="text">
+                                <input id = "cargo_weight" class="input_form_row_smaller" type="text" />
                             </div>
                             <div class="form_column_smaller">
                                 <div   class="label_input_form_row_smaller">Обьем груза</div>
-                                <input class="input_form_row_smaller" type="text">
+                                <input id = "cargo_volume" class="input_form_row_smaller" type="text" />
                             </div>
                         </div>
                     </div>
                     <div class="form_column">
-                        <div   class="label_form_column">
-                            <p>Сопроводительное письмо</p>
+                        <div   class="label_form_column_right">
+                            <h2>Сопроводительное письмо</h2>
                         </div>
                         <div   class="label_input_form_feedback_dark form_row top_margin-34 margin_bottom_5px"> Автор
                         </div>
-                        <input class="input_form_feedback            form_row top_margin-34 margin_bottom_5px" type="text">
+                        <input id = "feedback_author" class="input_form_feedback form_row top_margin-34
+                        margin_bottom_5px" type="text" />
                         <div   class="label_input_form_feedback_dark form_row"> E-mail/Телефон</div>
-                        <input class="input_form_feedback            form_row" type="text">
-                        <div   class="label_input_form_feedback      form_row feedback_text_label">Текст :</div>
+                        <input id="feedback_contacts" class="input_form_feedback            form_row" type="text" />
+                        <div   class="label_input_form_feedback form_row feedback_text_label">Текст :</div>
                         <textarea name="" id="feedback_text"></textarea>
                     </div>
                 </form>
