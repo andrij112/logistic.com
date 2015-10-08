@@ -218,13 +218,14 @@ Route::set('get_careers',  'get_careers')
 		'controller' => 'index',
 		'action'     => 'get_careers',
 	));
-
+/**
+ * Роут на контроллер для отправки пошти
+ */
 Route::set('send_custom',  'send_custom')
 	->defaults(array(
 		'controller' => 'index',
 		'action'     => 'send_custom',
 	));
-
 /**
  * Дефолтни роут
  */

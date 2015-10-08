@@ -51,38 +51,89 @@ class Controller_Index extends Controller_Template {
 	 */
 	public function action_get_main()
 	{
-		echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_main')));
-		die;
+		if(HTTP_Request::POST == $this->request->method()) {
+			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_main')));
+			die;
+		}
 	}
 
 	public function action_get_custom()
 	{
-		echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_custom')));
-		die;
+		if(HTTP_Request::POST == $this->request->method()) {
+			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_custom')));
+			die;
+		}
 	}
 
 	public function action_get_services()
 	{
-		echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_services')));
-		die;
+		if(HTTP_Request::POST == $this->request->method()) {
+			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_services')));
+			die;
+		}
 	}
 
 	public function action_get_information()
 	{
-		echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory
-		('article_information')));
-		die;
+		if(HTTP_Request::POST == $this->request->method()) {
+			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory
+			('article_information')));
+			die;
+		}
 	}
 
 	public function action_get_contacts()
 	{
-		echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_contacts')));
-		die;
+		if(HTTP_Request::POST == $this->request->method()) {
+			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_contacts')));
+			die;
+		}
 	}
 
 	public function action_get_careers()
 	{
-		echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_careers')));
-		die;
+		if(HTTP_Request::POST == $this->request->method()) {
+			echo $this->request = json_encode(array('status' => 'OK', 'content' => (string)View::factory('article_careers')));
+			die;
+		}
 	}
+
+	public function action_send_custom()
+	{
+		if (HTTP_Request::POST == $this->request->method()) {
+			$recepient = "mur_mail@ukr.net";
+			$sitename = "Logistic LineLTD";
+
+			$address_out  	   = trim(Arr::get($_POST, 'address_out',       NULL));
+			$address_in   	   = trim(Arr::get($_POST, 'address_in',        NULL));
+			$cargo_type   	   = trim(Arr::get($_POST, 'cargo_type',        NULL));
+			$cargo_weight 	   = trim(Arr::get($_POST, 'cargo_weight',      NULL));
+			$cargo_volume      = trim(Arr::get($_POST, 'cargo_volume',      NULL));
+			$feedback_author   = trim(Arr::get($_POST, 'feedback_author',   NULL));
+			$feedback_contacts = trim(Arr::get($_POST, 'feedback_contacts', NULL));
+			$feedback_text     = trim(Arr::get($_POST, 'feedback_text',     NULL));
+
+			if(!$address_out || !$address_in || !$cargo_type || !$cargo_weight || !$cargo_volume || !$feedback_author
+				|| !$feedback_contacts){
+					return false;
+				die;
+			}
+			$pagetitle = "Новая заявка с сайта \"$sitename\"";
+			$message   = "Автор запроса:     $feedback_author   \n " .
+						 "Контакты:          $feedback_contacts \n " .
+						 "Параметры запроса: 					\n " .
+						 "Адрес отправителя: $address_out  		\n " .
+						 "Адрес доставки:    $address_in   		\n " .
+						 "Вид груза:		 $cargo_type   		\n " .
+						 "Вес груза: 		 $cargo_weight 		\n " .
+						 "Обьем груза: 		 $cargo_volume 		\n " .
+						 "Сопроводительное письмо: 		   		\n " .
+											 $feedback_text;
+
+			mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
+			print_r('Its end');
+			die;
+		}
+	}
+
 } // End Index

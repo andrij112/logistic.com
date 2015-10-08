@@ -50,7 +50,7 @@
                 if ($page != 'custom')
                     echo 'class="hide_element"';
             ?>>
-                <form action="">
+                <form id = "custom_form" action="">
                     <div class="form_column">
                         <div class="label_form_column_left">
                             <h2>Параметры доставки</h2>

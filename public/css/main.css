@@ -1,4 +1,4 @@
-*::-webkit-input-placeholder {
+/**::-webkit-input-placeholder {
     color: #666;
     opacity: 1;
 }
@@ -18,7 +18,7 @@ body textarea:focus:required:invalid {
 body input:required:valid,
 body textarea:required:valid {
 
-}
+}*/
 /*Основні стилі -------------------------------------------------------------------------*/
 body {
     font-family: "Conv_urw_gothic_l_book";

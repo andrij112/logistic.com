@@ -115,7 +115,7 @@ $(document).ready(function(){
     /**
      * Функція валідації форми відправки заявки на розрахунок послуг ********************************
      */
-    $('body').on('click', '.get_price_button_inverted', function(){
+    $('body').on('click', '#request_button_text_inverted', function(){
        var error = false;
        if(!$('#address_out').val()) {
            $('#address_out').attr('placeholder', 'Введите, пожалуйста, адрес отпраки груза');
@@ -180,8 +180,21 @@ $(document).ready(function(){
            $('#feedback_contacts').css('background', '#dfd');
        }
        if(!error) {
-
+          var data = {'address_out'  	   : $('#address_out').val(),
+                      'address_in'   	   : $('#address_in').val(),
+                      'cargo_type'   	   : $('#cargo_type').val(),
+                      'cargo_weight' 	   : $('#cargo_weight').val(),
+                      'cargo_volume'       : $('#cargo_volume').val(),
+                      'feedback_author'    : $('#feedback_author').val(),
+                      'feedback_contacts'  : $('#feedback_contacts').val(),
+                      'feedback_text'      : $('#feedback_text').val()
+          };
+           sendCustom(data, function(r){
+               if(r.status == "OK")
+                    $('.get_price h2').val('Наш специалист відет с Вами на связь ближаешим временем.');
+               else
+                   $('.get_price h2').val('Вы неверно ввели данные. Заполните, пожалуста все поля формы.');
+           });
        }
-
     });
 });
