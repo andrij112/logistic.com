@@ -27,7 +27,6 @@ function getArticle(article, callback) {
  * @param callback
  */
 function sendCustom(data, callback) {
-    console.log(data);
     $.ajax({
         url: '/send_custom',
         dataType: 'json',

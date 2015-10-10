@@ -190,10 +190,21 @@ $(document).ready(function(){
                       feedback_text      : $('#feedback_text').val()
           };
           sendCustom(data, function(r){
-               if(r.status == "OK")
-                    $('.get_price h2').val('Наш специалист відет с Вами на связь ближаешим временем.');
+               if(r.status == "OK"){
+                   $('.get_price h2').html('Мы свяжемся с Вами ближайшим временем');
+                   $('.get_price .get_price_button').css("background","#34D800");
+                   $('.get_price .get_price_button h2').html('Запрос отправлен');
+                   $('#request_button_text_inverted').hide();
+                   $('#request_button_text').show();
+                   $('.content .get_price .get_price_button').removeClass('get_price_button_inverted');
+                   $('#address_out, #address_in, #cargo_type, #cargo_weight, ' +
+                      '#cargo_volume, #feedback_author, #feedback_contacts, #feedback_text')
+                       .val('')
+                       .css("background", '')
+                       .attr('placeholder','');
+               }
                else
-                   $('.get_price h2').val('Вы неверно ввели данные. Заполните, пожалуста все поля формы.');
+                   $('.get_price h2').html('Вы неверно ввели данные.');
            });
        }
     });

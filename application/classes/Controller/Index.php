@@ -181,7 +181,8 @@ class Controller_Index extends Controller_Template {
 											 $feedback_text;
 
 			mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
-			print_r('Its end');
+//			print_r('Its end');
+			echo json_encode(array('status' => 'OK'));
 			die;
 		}
 		die;
