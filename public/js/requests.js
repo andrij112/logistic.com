@@ -31,10 +31,8 @@ function sendCustom(data, callback) {
     $.ajax({
         url: '/send_custom',
         dataType: 'json',
-        data:data,
+        data: data,
         cache: true,
-        contentType: false,
-        processData: false,
         type: 'post',
         success: function (response) {
             if (callback)

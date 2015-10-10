@@ -180,16 +180,16 @@ $(document).ready(function(){
            $('#feedback_contacts').css('background', '#dfd');
        }
        if(!error) {
-          var data = {'address_out'  	   : $('#address_out').val(),
-                      'address_in'   	   : $('#address_in').val(),
-                      'cargo_type'   	   : $('#cargo_type').val(),
-                      'cargo_weight' 	   : $('#cargo_weight').val(),
-                      'cargo_volume'       : $('#cargo_volume').val(),
-                      'feedback_author'    : $('#feedback_author').val(),
-                      'feedback_contacts'  : $('#feedback_contacts').val(),
-                      'feedback_text'      : $('#feedback_text').val()
+          var data = {address_out  	     : $('#address_out').val(),
+                      address_in   	     : $('#address_in').val(),
+                      cargo_type   	     : $('#cargo_type').val(),
+                      cargo_weight 	     : $('#cargo_weight').val(),
+                      cargo_volume       : $('#cargo_volume').val(),
+                      feedback_author    : $('#feedback_author').val(),
+                      feedback_contacts  : $('#feedback_contacts').val(),
+                      feedback_text      : $('#feedback_text').val()
           };
-           sendCustom(data, function(r){
+          sendCustom(data, function(r){
                if(r.status == "OK")
                     $('.get_price h2').val('Наш специалист відет с Вами на связь ближаешим временем.');
                else
