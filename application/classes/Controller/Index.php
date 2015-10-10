@@ -103,7 +103,7 @@ class Controller_Index extends Controller_Template {
 
 		if (HTTP_Request::POST == $this->request->method()) {
 			$recepient = "mur_mail@ukr.net";
-			$sitename = "Logistic LineLTD";
+			$sitename  = "Logistic LineLTD";
 
 			//print_r(Arr::get($_POST, 'address_out'));
 //			print_r("Adress out = \n");
@@ -180,7 +180,7 @@ class Controller_Index extends Controller_Template {
 						 "Сопроводительное письмо: 		   		\n " .
 											 $feedback_text;
 
-			print_r(mail($recepient, $pagetitle, $message));
+			mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
 			print_r('Its end');
 			die;
 		}
