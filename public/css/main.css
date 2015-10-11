@@ -115,6 +115,7 @@ p{
 /*Стилі кнопки запиту на вартість послуг -----------------------------------------------------------*/
 .get_price{
     position: relative;
+    top: 10px;
     height: 50px;
     background-color: #000000;
     -webkit-border-radius: 15px;
@@ -220,8 +221,9 @@ footer{
     /*background-color: #676767;*/
     color: #fff;
     overflow: hidden;
-    margin : 0 auto;
+    margin : 0 auto 5px;
     position: relative;
+    /*clear: both;*/
     /*display:none;*/
 }
 #custom_form_wrapper form{
@@ -233,7 +235,7 @@ footer{
     width:565px;
     height: 100%;
     float: left;
-    overflow: hidden;
+   /* overflow: hidden;*/
     position: relative;
 }
 .label_form_column_right{
@@ -273,13 +275,14 @@ footer{
     margin-left: 50px;
     line-height: 34px;
     text-align: left;
+    font-family: "Conv_urw_gothic_l_book";
     float: left;
 }
 .label_input_form_row{
     width:465px;
-    height: 34px;
+    height: 30px;
     margin-left: 50px;
-    line-height: 34px;
+    line-height: 30px;
     text-align: left;
     float: left;
 }
@@ -288,11 +291,12 @@ footer{
 }
 .input_form_row {
     width:465px;
-    height: 34px;
+    height: 32px;
     margin-left: 50px;
-    line-height: 34px;
+    line-height: 32px;
     text-align: left;
     float: left;
+    font-family: "Conv_urw_gothic_l_book";
     color: #000;
 }
 .input_form_row_for_address {
@@ -305,6 +309,8 @@ footer{
     width:  215px;
     height: 34px;
     float:  left;
+    font-family: "Conv_urw_gothic_l_book";
+
 }
 .form_row .label_input_form_row_smaller,
 .form_row .input_form_row_smaller {
@@ -315,6 +321,7 @@ footer{
 .form_row  .input_form_row_smaller{
     width: 100%;
     height: 34px;
+    font-family: "Conv_urw_gothic_l_book";
     color:#000;
 }
 .feedback_text_label{
@@ -326,6 +333,7 @@ footer{
     height: 204px;
     margin-left: 50px;
     float: left;
+    font-family: "Conv_urw_gothic_l_book";
     color: #000;
     resize: none;
 }

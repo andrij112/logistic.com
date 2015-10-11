@@ -97,9 +97,9 @@
             </div>
             <div id="slider">
                 <ul class="bxslider">
-                    <li><img src="public/img/1.png" /></li>
-                    <li><img src="public/img/2.png" /></li>
-                    <li><img src="public/img/3.png" /></li>
+                    <li><img src="public/img/1.png" alt = "auto"/></li>
+                    <li><img src="public/img/2.png" alt = "ship"/></li>
+                    <li><img src="public/img/3.png" alt = "airplane"/></li>
                 </ul>
 <!--                <img src="public/img/main.png" alt="main_image">-->
             </div>

@@ -4,6 +4,7 @@ $(document).ready(function(){
      */
 
     var slider = $('.bxslider').bxSlider({
+        controls: false,
         auto: true
     });
     /**
@@ -13,7 +14,48 @@ $(document).ready(function(){
         var page = $(this).parent().attr("id").split('_')[2];
         $('#main_menu li span').removeClass('active_li');
         $(this).addClass('active_li');
-        if($(this).parent().attr("id") == 'menu_button_custom'){
+        switch ($(this).parent().attr("id")){
+            case 'menu_button_custom' :
+                $('#slider .bx-wrapper .bx-controls-direction').hide();
+                $('#slider').slideDown('slow');
+                $('#custom_form_wrapper').slideDown('slow',function(){
+                    $('#slider').hide();
+                });
+                //$('#slider').hide();
+                $('#request_button_text').hide();
+                $('#request_button_text_inverted').show();
+                $('.content .get_price .get_price_button').addClass('get_price_button_inverted');
+                getArticle('custom', function(response){
+                    if(response.ststus = 'OK'){
+                        $('.wrapper_article').html(response.content);
+                    }
+                    else
+                        console.log('Error in request to custom article');
+                });
+                break;
+            default :
+                if($('#custom_form_wrapper').css("display") != 'none'){
+                    $('#slider').show();
+                    slider.reloadSlider();
+                    $('#custom_form_wrapper').slideUp('slow',function() {
+                        $('#slider .bx-wrapper .bx-controls-direction').show();
+                    });
+                    $('#request_button_text').show();
+                    $('#request_button_text_inverted').hide();
+                    $('.content .get_price .get_price_button').removeClass('get_price_button_inverted');
+                }
+                    getArticle(page, function(response){
+                        if(response.ststus = 'OK'){
+                            $('.wrapper_article').html(response.content);
+                        }
+                        else
+                            console.log('Error in request to custom article');
+                    })
+
+
+                break;
+        }
+        /*if($(this).parent().attr("id") == 'menu_button_custom'){
             $('#slider .bx-wrapper .bx-controls-direction').hide();
             $('#slider').slideDown('slow');
             $('#custom_form_wrapper').slideDown('slow',function(){
@@ -57,7 +99,7 @@ $(document).ready(function(){
                     console.log('Error in request to custom article');
             })
 
-        }
+        }*/
         window.history.pushState(null, null, '/' + page);
     })
     /**
