@@ -59,22 +59,48 @@ p{
     margin: 0 auto;
 }
 /*Стилі  верхньої частини header ---------------------------------------------------------*/
+.empty_top{
+    width:  100%;
+    height: 100px;
+}
 .header_topline{
+    /*position: fixed;*/
     width:  100%;
     height: 100px;
     /*padding-top: 25px;*/
     overflow: hidden;
+    z-index:3;
+
+}
+#top_background_wrapper{
+    height:57px;
+    /*display:inline-block;*/
+    background-color: #000;
+    margin-top:22px;
+    z-index: 3;
+}
+.fixed {
+    position:fixed;
+    top:0; /*left:0;*/
+    margin-top:0 !important;
+    width:1264px;
+    -webkit-border-bottom-left-radius: 15px;
+    -moz-border-bottom-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    -moz-border-bottom-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 #logo{
     display: block;
     float: left;
     margin-left: 5px;
-    margin-top:  22px;
+    /*margin-top:  22px;*/
 }
 .header_topline h1{
     font-family: "Conv_urw_gothic_l_book";
     font-size: 50px;
-    line-height: 100px;
+    line-height: 57px;
     color:#fff;
     display: block;
     float: left;
@@ -87,7 +113,7 @@ p{
 #main_menu li{
     display: inline-block;
     float: left;
-    line-height: 100px;
+    line-height: 57px;
     font-size: 18px;
     color:#fff;
     margin-right: 10px;
@@ -107,6 +133,9 @@ p{
     height: 445px;
     margin: 0 auto;
     text-align: center;
+}
+.after_header{
+    position: relative;
 }
 .wrapper_content{
     width: 100%;

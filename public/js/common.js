@@ -2,15 +2,27 @@ $(document).ready(function(){
     /**
      * Скріпт роботи слайдера ******************************************************************
      */
-
     var slider = $('.bxslider').bxSlider({
         controls: false,
         auto: true
     });
     /**
+     * Скріпт фіксування верхнього меню ********************************************************
+     * @type {*|jQuery|HTMLElement}
+     */
+    var $menu = $("#top_background_wrapper");
+    $(window).scroll(function(){
+        if ( $(this).scrollTop() > 22 && $menu.hasClass("default") ){
+            $menu.removeClass("default").addClass("fixed");
+        } else if($(this).scrollTop() <= 22 && $menu.hasClass("fixed")) {
+            $menu.removeClass("fixed").addClass("default");
+        }
+    });//scroll
+    /**
      * Реакция на клик главного меню (навигации) ***********************************************
      */
     $('#main_menu').on("click", "li span", function(){
+        $("body,html").animate({"scrollTop":0},"slow");
         var page = $(this).parent().attr("id").split('_')[2];
         $('#main_menu li span').removeClass('active_li');
         $(this).addClass('active_li');

@@ -22,27 +22,30 @@
 <div class="wrapper">
     <header>
         <div class="header_topline">
-            <img id="logo" src="public/img/logo.png" alt="logo"/>
-            <div id="main_label">
-                <h1>Logistic Line LTD </h1>
-            </div>
-            <div id="main_menu">
-                <ul>
-                    <li id="menu_button_main"><span <?php
-                        echo ($page == 'main' || $page == '') ? 'class="active_li"': ''?>>Главная</span></li>
-                    <li id="menu_button_custom"><span <?php
-                        echo $page == 'custom' ? 'class="active_li"': ''?>>Заказ</span></li>
-                    <li id="menu_button_services"><span <?php
-                        echo $page == 'services' ? 'class="active_li"': ''?>>Услуги</span></li>
-                    <li id="menu_button_information"><span <?php
-                        echo $page == 'information' ? 'class="active_li"': ''?>>Информация</span></li>
-                    <li id="menu_button_contacts"><span <?php
-                        echo $page == 'contacts' ? 'class="active_li"': ''?>>Контакты</span></li>
-                    <li id="menu_button_careers"><span <?php
-                        echo $page == 'careers' ? 'class="active_li"': ''?>>Вакансии</span></li>
-                </ul>
+            <div id="top_background_wrapper" class="default">
+                <img id="logo" src="public/img/logo.png" alt="logo"/>
+                <div id="main_label">
+                    <h1>Logistic Line LTD </h1>
+                </div>
+                <div id="main_menu">
+                    <ul>
+                        <li id="menu_button_main"><span <?php
+                            echo ($page == 'main' || $page == '') ? 'class="active_li"': ''?>>Главная</span></li>
+                        <li id="menu_button_custom"><span <?php
+                            echo $page == 'custom' ? 'class="active_li"': ''?>>Заказ</span></li>
+                        <li id="menu_button_services"><span <?php
+                            echo $page == 'services' ? 'class="active_li"': ''?>>Услуги</span></li>
+                        <li id="menu_button_information"><span <?php
+                            echo $page == 'information' ? 'class="active_li"': ''?>>Информация</span></li>
+                        <li id="menu_button_contacts"><span <?php
+                            echo $page == 'contacts' ? 'class="active_li"': ''?>>Контакты</span></li>
+                        <li id="menu_button_careers"><span <?php
+                            echo $page == 'careers' ? 'class="active_li"': ''?>>Вакансии</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
+<!--        <div class="empty_top"></div>-->
     </header>
     <section>
         <div class="after_header">
@@ -101,7 +104,7 @@
                     <li><img src="public/img/2.png" alt = "ship"/></li>
                     <li><img src="public/img/3.png" alt = "airplane"/></li>
                 </ul>
-<!--                <img src="public/img/main.png" alt="main_image">-->
+                <img class="hide_element" src="public/img/5.png" alt="info">
             </div>
         </div>
         <div class="wrapper_content">
