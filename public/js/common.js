@@ -4,6 +4,7 @@ $(document).ready(function(){
      */
     var slider = $('.bxslider').bxSlider({
         controls: false,
+        pager: false,
         auto: true
     });
     /**
@@ -83,23 +84,29 @@ $(document).ready(function(){
                     $('#request_button_text_inverted').hide();
                     $('.content .get_price .get_price_button').removeClass('get_price_button_inverted');
                 }
-                else if($('#slider').css("display") == 'none') {
+                else {
+                    if ($('#slider').css("display") == 'none') {
                         $('#slider').show();
-                }
-                if($('#slider .bx-wrapper').css("display") == 'none'){
-                    slider.reloadSlider();
-                    $('#slider .bx-wrapper').slideDown('slow', function(){
-                    $('#slider .page_individual_img').hide();
-                    console.log('here');
-                    });
-                }
-                    getArticle(page, function(response){
-                        if(response.ststus = 'OK'){
+                    }
+                    if($('#slider .bxslider').hasClass('hide_element')){
+                        $('#slider .bxslider').removeClass('hide_element');
+                        slider.reloadSlider();
+                    }
+                    if ($('#slider .bx-wrapper').css("display") == 'none') {
+                        slider.reloadSlider();
+                        $('#slider .bx-wrapper').slideDown('slow', function () {
+                            $('#slider .page_individual_img').hide();
+                            console.log('here');
+                        });
+                    }
+                    getArticle(page, function (response) {
+                        if (response.ststus = 'OK') {
                             $('.wrapper_article').html(response.content);
                         }
                         else
                             console.log('Error in request to custom article');
                     });
+                }
                 break;
         }
         /*if($(this).parent().attr("id") == 'menu_button_custom'){

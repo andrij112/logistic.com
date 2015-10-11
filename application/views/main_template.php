@@ -98,12 +98,18 @@
                 </form>
             </div>
             <div id="slider">
-                <ul class="bxslider">
+                <ul class="bxslider <?php
+                    echo $page == 'information'?
+                        'hide_element' : ''
+                ?>">
                     <li><img src="public/img/1.png" alt = "auto"/></li>
                     <li><img src="public/img/2.png" alt = "ship"/></li>
                     <li><img src="public/img/3.png" alt = "airplane"/></li>
                 </ul>
-                <img class="page_individual_img hide_element" src="public/img/5.png" alt="info">
+                <img class="page_individual_img <?php
+                    echo $page == 'information'?
+                        '' : 'hide_element'
+                ?>" src="public/img/5.png" alt="info">
             </div>
         </div>
         <div class="wrapper_content">
