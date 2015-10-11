@@ -11,10 +11,10 @@
     <meta name="description"           content="Услуги в сфере логистики" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport"              content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet"     href="public/libs/bootstrap/bootstrap-grid-3.3.1.min.css" />
     <link rel="stylesheet"     href="public/css/fonts.css" />
     <link rel="stylesheet"     href="public/css/reset.css" />
     <link rel="stylesheet"     href="public/css/main.css" />
+    <link rel="stylesheet"     href="public/css/jquery.bxslider.css" />
     <link rel="stylesheet"     href="public/css/media.css" />
 </head>
 <body>
@@ -96,7 +96,12 @@
                 </form>
             </div>
             <div id="slider">
-                <img src="public/img/main.png" alt="main_image">
+                <ul class="bxslider">
+                    <li><img src="public/img/1.png" /></li>
+                    <li><img src="public/img/2.png" /></li>
+                    <li><img src="public/img/3.png" /></li>
+                </ul>
+<!--                <img src="public/img/main.png" alt="main_image">-->
             </div>
         </div>
         <div class="wrapper_content">
@@ -133,6 +138,7 @@
 <script src="public/libs/respond/respond.min.js"></script>
 <![endif]-->
 <script src="public/libs/jquery/jquery-1.11.1.min.js"></script>
+<script src="public/libs/jquery.bxslider/jquery.bxslider.min.js"></script>
 <script src="public/js/common.js"></script>
 <script src="public/js/requests.js"></script>
 </body>

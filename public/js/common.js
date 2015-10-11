@@ -1,5 +1,11 @@
 $(document).ready(function(){
-    //console.log(window.location);
+    /**
+     * Скріпт роботи слайдера ******************************************************************
+     */
+
+    var slider = $('.bxslider').bxSlider({
+        auto: true
+    });
     /**
      * Реакция на клик главного меню (навигации) ***********************************************
      */
@@ -8,8 +14,12 @@ $(document).ready(function(){
         $('#main_menu li span').removeClass('active_li');
         $(this).addClass('active_li');
         if($(this).parent().attr("id") == 'menu_button_custom'){
+            $('#slider .bx-wrapper .bx-controls-direction').hide();
             $('#slider').slideDown('slow');
-            $('#custom_form_wrapper').slideDown('slow');
+            $('#custom_form_wrapper').slideDown('slow',function(){
+                $('#slider').hide();
+            });
+            //$('#slider').hide();
             $('#request_button_text').hide();
             $('#request_button_text_inverted').show();
             $('.content .get_price .get_price_button').addClass('get_price_button_inverted');
@@ -22,7 +32,11 @@ $(document).ready(function(){
             })
         }
         else if($('#custom_form_wrapper').css("display") != 'none'){
-            $('#custom_form_wrapper').slideUp('slow');
+            $('#slider').show();
+            slider.reloadSlider();
+            $('#custom_form_wrapper').slideUp('slow',function() {
+                $('#slider .bx-wrapper .bx-controls-direction').show();
+            });
             $('#request_button_text').show();
             $('#request_button_text_inverted').hide();
             $('.content .get_price .get_price_button').removeClass('get_price_button_inverted');
@@ -66,7 +80,7 @@ $(document).ready(function(){
         })
     })
     /**
-     * Функція для роботи кнопок браузера переходу "вперед" та "азад" ********************************
+     * Функція для роботи кнопок браузера переходу "вперед" та "назад" ********************************
      */
     $(window).bind('popstate', function() {
         var page = location.href.split('/').slice(1)[2];
@@ -203,8 +217,10 @@ $(document).ready(function(){
                        .css("background", '')
                        .attr('placeholder','');
                }
-               else
+               else{
                    $('.get_price h2').html('Вы неверно ввели данные.');
+                   $('.get_price .get_price_button h2').html('Повторый запрос');
+               }
            });
        }
     });

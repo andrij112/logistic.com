@@ -45,7 +45,6 @@ class Controller_Index extends Controller_Template {
 		$this->template->article = View::factory('article_careers');
 		$this->template->page = 'careers';
 	}
-
 	/**
 	 * Функції для ajax запитів ------------------------------------------------------------
 	 */
@@ -98,6 +97,10 @@ class Controller_Index extends Controller_Template {
 		}
 	}
 
+	/**
+	 * Функція відправлення на пошту заявки із перевіркою введення даних ****************************
+	 * @return bool
+	 */
 	public function action_send_custom()
 	{
 
@@ -105,7 +108,7 @@ class Controller_Index extends Controller_Template {
 			$recepient = "mur_mail@ukr.net";
 			$sitename  = "Logistic LineLTD";
 
-			//print_r(Arr::get($_POST, 'address_out'));
+//			print_r(Arr::get($_POST, 'address_out'));
 //			print_r("Adress out = \n");
 //			print_r($this->request->post('address_out'));
 //			print_r($this->request->post());
@@ -137,15 +140,6 @@ class Controller_Index extends Controller_Template {
 			echo "\n";
 			return false;
 			die;*/
-
-			/*$address_out  	   = trim(Arr::get($_POST, 'address_out',       NULL));
-			$address_in   	   = trim(Arr::get($_POST, 'address_in',        NULL));
-			$cargo_type   	   = trim(Arr::get($_POST, 'cargo_type',        NULL));
-			$cargo_weight 	   = trim(Arr::get($_POST, 'cargo_weight',      NULL));
-			$cargo_volume      = trim(Arr::get($_POST, 'cargo_volume',      NULL));
-			$feedback_author   = trim(Arr::get($_POST, 'feedback_author',   NULL));
-			$feedback_contacts = trim(Arr::get($_POST, 'feedback_contacts', NULL));
-			$feedback_text     = trim(Arr::get($_POST, 'feedback_text',     NULL));*/
 
 			if(!$address_out || !$address_in || !$cargo_type || !$cargo_weight || !$cargo_volume || !$feedback_author
 				|| !$feedback_contacts){

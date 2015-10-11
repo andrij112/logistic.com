@@ -185,6 +185,7 @@ footer{
     height:50px;
     background-color: #000000;
     position: relative;
+    /*position: relative;*/
     top: -25px;
     line-height: 50px;
     color: #fff;
@@ -346,6 +347,17 @@ footer{
     color: #000;
     text-align: center;
 }
+/* Стилі сторінки "Контакти" ***************************************************  */
+#contacts_list{
+    margin-left: 30px;
+    margin-right: 30px;
+    display: block;
+    float: left;
+}
+#contacts_list li{
+    list-style: outside none none;
+}
+
 /*Индивідуальні налаштування елементів  -----------------------------------------------------------*/
 .top_margin-34{
     margin-top: 34px;
