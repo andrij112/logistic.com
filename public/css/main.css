@@ -59,10 +59,6 @@ p{
     margin: 0 auto;
 }
 /*Стилі  верхньої частини header ---------------------------------------------------------*/
-.empty_top{
-    width:  100%;
-    height: 100px;
-}
 .header_topline{
     /*position: fixed;*/
     width:  100%;

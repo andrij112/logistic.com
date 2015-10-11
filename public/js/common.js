@@ -19,7 +19,7 @@ $(document).ready(function(){
         }
     });//scroll
     /**
-     * Реакция на клик главного меню (навигации) ***********************************************
+     * Реакція на клік кнопок головного меню (навигации) ***********************************************
      */
     $('#main_menu').on("click", "li span", function(){
         $("body,html").animate({"scrollTop":0},"slow");
@@ -28,7 +28,6 @@ $(document).ready(function(){
         $(this).addClass('active_li');
         switch ($(this).parent().attr("id")){
             case 'menu_button_custom' :
-                $('#slider .bx-wrapper .bx-controls-direction').hide();
                 $('#slider').slideDown('slow');
                 $('#custom_form_wrapper').slideDown('slow',function(){
                     $('#slider').hide();
@@ -45,10 +44,12 @@ $(document).ready(function(){
                         console.log('Error in request to custom article');
                 });
                 break;
-            default :
+            case 'menu_button_information':
                 if($('#custom_form_wrapper').css("display") != 'none'){
                     $('#slider').show();
-                    slider.reloadSlider();
+                    $('#slider .bx-wrapper').hide();
+                    $('#slider .page_individual_img').show();
+                    //slider.reloadSlider();
                     $('#custom_form_wrapper').slideUp('slow',function() {
                         $('#slider .bx-wrapper .bx-controls-direction').show();
                     });
@@ -56,15 +57,49 @@ $(document).ready(function(){
                     $('#request_button_text_inverted').hide();
                     $('.content .get_price .get_price_button').removeClass('get_price_button_inverted');
                 }
+                else{
+                    $('#slider .bx-wrapper').slideUp('slow', function () {
+                        $('#slider .bx-wrapper').hide();
+                    });
+                    $('#slider .page_individual_img').show();
+                }
+                getArticle(page, function(response){
+                    if(response.ststus = 'OK'){
+                        $('.wrapper_article').html(response.content);
+                    }
+                    else
+                        console.log('Error in request to custom article');
+                });
+
+                break;
+            default :
+                if($('#custom_form_wrapper').css("display") != 'none'){
+                    $('#slider').show();
+                    $('#slider .bx-wrapper').show();
+                    $('#slider .page_individual_img').hide();
+                    slider.reloadSlider();
+                    $('#custom_form_wrapper').slideUp('slow');
+                    $('#request_button_text').show();
+                    $('#request_button_text_inverted').hide();
+                    $('.content .get_price .get_price_button').removeClass('get_price_button_inverted');
+                }
+                else if($('#slider').css("display") == 'none') {
+                        $('#slider').show();
+                }
+                if($('#slider .bx-wrapper').css("display") == 'none'){
+                    slider.reloadSlider();
+                    $('#slider .bx-wrapper').slideDown('slow', function(){
+                    $('#slider .page_individual_img').hide();
+                    console.log('here');
+                    });
+                }
                     getArticle(page, function(response){
                         if(response.ststus = 'OK'){
                             $('.wrapper_article').html(response.content);
                         }
                         else
                             console.log('Error in request to custom article');
-                    })
-
-
+                    });
                 break;
         }
         /*if($(this).parent().attr("id") == 'menu_button_custom'){
@@ -115,7 +150,7 @@ $(document).ready(function(){
         window.history.pushState(null, null, '/' + page);
     })
     /**
-     * Реакция на клик кнопки "Розрахувати вартість" ************************************************
+     * Реакція на клік кнопки "Розрахувати вартість" ************************************************
      */
     $('#request_button_text').on('click', function(){
         $(this).hide();

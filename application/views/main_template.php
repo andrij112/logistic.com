@@ -45,7 +45,6 @@
                 </div>
             </div>
         </div>
-<!--        <div class="empty_top"></div>-->
     </header>
     <section>
         <div class="after_header">
@@ -104,7 +103,7 @@
                     <li><img src="public/img/2.png" alt = "ship"/></li>
                     <li><img src="public/img/3.png" alt = "airplane"/></li>
                 </ul>
-                <img class="hide_element" src="public/img/5.png" alt="info">
+                <img class="page_individual_img hide_element" src="public/img/5.png" alt="info">
             </div>
         </div>
         <div class="wrapper_content">
