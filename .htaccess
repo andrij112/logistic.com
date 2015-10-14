@@ -1,3 +1,5 @@
+SetEnv KOHANA_ENV testing
+
 #PHP Flags to config php extensions
 php_flag xcache.cacher Off
 php_flag xcache.cacher 0
@@ -24,4 +26,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # Rewrite all other URLs to index.php/URL
 RewriteRule .* index.php/$0 [PT]
 
-
+SetEnv KOHANA_ENV testing

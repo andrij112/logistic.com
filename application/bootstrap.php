@@ -234,3 +234,10 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'index',
 		'action'     => 'index',
 	));
+/**
+ * Роут обробки помилок
+ */
+Route::set('error', 'error/<action>(/<message>)', array('action' => '[0-9]++', 'message' => '.+'))
+	->defaults(array(
+		'controller' => 'error',
+	));
