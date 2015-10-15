@@ -422,8 +422,9 @@ footer{
     font-size: 36px;
     color:#fff;
     height : 750px;
-    background-image: url("../img/error_404_2.png");
-    background-repeat: no-repeat;
+    padding-left: 30px;
+    /*background-image: url("../img/error_404_2.png");*/
+    /*background-repeat: no-repeat;*/
 }
 
 
