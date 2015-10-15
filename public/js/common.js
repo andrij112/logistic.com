@@ -96,7 +96,6 @@ $(document).ready(function(){
                     }
                     if($('#slider .bxslider').hasClass('hide_element')){
                         $('#slider .bxslider').removeClass('hide_element');
-                        slider.reloadSlider();
                     }
                     if ($('#slider .bx-wrapper').css("display") == 'none') {
                         slider.reloadSlider();
@@ -105,14 +104,14 @@ $(document).ready(function(){
                             console.log('here');
                         });
                     }
-                    getArticle(page, function (response) {
-                        if (response.ststus = 'OK') {
-                            $('.wrapper_article').html(response.content);
-                        }
-                        else
-                            console.log('Error in request to custom article');
-                    });
                 }
+                getArticle(page, function (response) {
+                    if (response.ststus = 'OK') {
+                        $('.wrapper_article').html(response.content);
+                    }
+                    else
+                        console.log('Error in request to custom article');
+                });
                 break;
         }
         /*if($(this).parent().attr("id") == 'menu_button_custom'){
