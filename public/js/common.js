@@ -160,6 +160,7 @@ $(document).ready(function(){
      * Реакція на клік кнопки "Розрахувати вартість" ************************************************
      */
     $('#request_button_text').on('click', function(){
+        $("body,html").animate({"scrollTop":0},"slow");
         $(this).hide();
         $('#request_button_text_inverted').show();
         $(this).parents('.get_price_button').addClass('get_price_button_inverted');
