@@ -133,6 +133,30 @@ p{
 .after_header{
     position: relative;
 }
+.bxslider {
+    position: relative;
+}
+.bxslider li{
+    position: relative;
+}
+.bxslider li img{
+    position: relative;
+}
+.bxslider li div{
+    display:none;
+}
+.slide-2 {
+    position: absolute;
+    color:#fff;
+    top:50px;
+    left:150px;
+}
+.slide-3 {
+    position: absolute;
+    color:#fff;
+    top:50px;
+    right:150px;
+}
 .wrapper_content{
     width: 100%;
     background-color: #d5d5d5;
@@ -395,6 +419,8 @@ footer{
 
 .error_wrapper{
     width:100%;
+    font-size: 36px;
+    color:#fff;
     height : 750px;
     background-image: url("../img/error_404_2.png");
     background-repeat: no-repeat;

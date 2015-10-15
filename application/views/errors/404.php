@@ -65,7 +65,8 @@
     </header>
 <section>
 <div class="error_wrapper">
-
+    Ошибка 404. </br>
+    Страница по указаному адресу не существует.
 </div>
 </section>
 <footer>

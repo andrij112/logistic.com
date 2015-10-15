@@ -102,9 +102,21 @@
                     echo $page == 'information'?
                         'hide_element' : ''
                 ?>">
-                    <li><img src="public/img/1.png" alt = "auto"/></li>
-                    <li><img src="public/img/2.png" alt = "ship"/></li>
-                    <li><img src="public/img/3.png" alt = "airplane"/></li>
+                    <li>
+                        <img src="public/img/1.png" alt = "auto"/>
+                    </li>
+                    <li>
+                        <img src="public/img/2.png" alt = "ship"/>
+                        <div class="slide-2">
+                            <p>Ваш груз всегда защищени и застрахован</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="public/img/3.png" alt = "airplane"/>
+                        <div class="slide-3">
+                            <p>Расчет маршрута с минимальными издержками</p>
+                        </div>
+                    </li>
                 </ul>
                 <img class="page_individual_img <?php
                     echo $page == 'information'?

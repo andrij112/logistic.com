@@ -5,7 +5,13 @@ $(document).ready(function(){
     var slider = $('.bxslider').bxSlider({
         controls: false,
         pager: false,
-        auto: true
+        auto: true,
+        onSlideBefore: function(){
+            $('.bxslider li div').hide();
+        },
+        onSlideAfter: function(){
+            $('.bxslider li div').fadeIn('slow');
+        }
     });
     /**
      * Скріпт фіксування верхнього меню ********************************************************
