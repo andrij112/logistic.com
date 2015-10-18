@@ -1,24 +1,4 @@
-/**::-webkit-input-placeholder {
-    color: #666;
-    opacity: 1;
-}
-*:-moz-placeholder {
-    color: #666;
-    opacity: 1;
-}
-*:-ms-input-placeholder {
-    color: #666;
-    opacity: 1;
-}
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid {
-
-}
-body input:required:valid,
-body textarea:required:valid {
-
-}*/
 /*Основні стилі -------------------------------------------------------------------------*/
 body {
     font-family: "Conv_urw_gothic_l_book";
@@ -33,9 +13,17 @@ h1{
     color:#fff;
     display: block;
 }
+h3{
+    font-family: "Conv_urw_gothic_l_book";
+    font-size: 20px;
+    line-height: 25px;
+    display: block;
+    text-align: center;
+}
 p{
     padding-top: 10px;
     font-size: 18px;
+    line-height: 20px;
 }
 /* Стилі заднього фону ------------------------------------------------------------------*/
 #top_background{
@@ -440,4 +428,11 @@ footer{
 }
 .hide_element{
     display:none;
+}
+.bold{
+    font-weight: bold;
+}
+.wrapper_article .ul-disk-type li{
+    list-style: disc;
+    font-style: italic;
 }
